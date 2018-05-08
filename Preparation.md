@@ -31,4 +31,14 @@ usr/local/haskell/ghc-8.0.2/lib/ghc-8.0.2/settings
 
 and change the "compiler supports -no-pie" flag from "NO" to "YES". (This is relative to your installation location.)
 
-Alternatively, you can use your distribution's package manger to install version 8.0.2 of the `haskell-platform` package.
+**Alternatively,** you can use your distribution's package manger to install version 8.0.2 of the `haskell-platform` package.
+
+## Editor support (optional)
+
+Here are some *optional* suggestions for improved Haskell support in a variety of editors. You will be able to follow the workshop without installing any of these.
+
+* **Haskell for Mac:** Nothing to do: a Haskell editor is built-in. 
+* **Emacs:** [haskell-mode](http://haskell.github.io/haskell-mode/)
+* **Vim:** [haskell-vim](https://github.com/neovimhaskell/haskell-vim)
+* **Sublime:** [SublimeHaskell](https://packagecontrol.io/packages/SublimeHaskell)
+* **Atom:** [Atom-Haskell](https://atom-haskell.github.io)
