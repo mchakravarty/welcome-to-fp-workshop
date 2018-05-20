@@ -201,3 +201,42 @@ inRadius point radius (p : ps)
 ```
 
 rewrite the functions `extractDigits` and `inRadius` to use `filter`.
+
+## Algebraic data types
+
+## Exercise 1
+
+Given the discussed code
+
+```haskell
+data Expr
+  = IntLit Int          -- integer constants, leaves of the expression tree
+  | Add    Expr Expr    -- addition node
+  | Mult   Expr Expr    -- multiplication node
+  
+eval :: Expr -> Int
+eval (IntLit n) = n
+eval (Add expr1 expr2)
+  = eval expr1 + eval expr2
+eval (Mult expr1 expr2)
+  = eval expr1 * eval expr2  
+```
+
+extend `eval` to deal with the richer expression structure defined by 
+
+```haskell
+data Expr
+  = IntLit    Int               -- integer constants, leaves of the expression trees
+  | BinaryApp BinOp   Expr Expr
+  | UnaryApp  UnaryOp Expr
+
+data BinOp
+  = MultOp
+  | AddOp
+  | DivOp
+  | SubOp
+
+data UnaryOp
+  = NegOp
+  | AbsOp
+```
