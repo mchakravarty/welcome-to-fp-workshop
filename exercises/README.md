@@ -40,3 +40,37 @@ showAreaOfCircle 12.3  ⇒  "The area of a circle with radius 12.3cm is abou
 ```
 
 Use the `show` function, as well as the predefined value `pi :: Floating a => a` to write `showAreaOfCircle`.
+
+## Fundamentals
+
+### Exercise 1
+
+Write a function `sort2 :: Ord a => a -> a -> (a, a)` which accepts two `Int` values as arguments and returns them as a sorted pair, so that `sort2 5 3` is equal to `(3,5)`. How can you define the function using a conditional, how can you do it using guards?
+
+### Exercise 2
+
+Define a function `isLower :: Char -> Bool` which returns `True` if a given character is a lower case letter. You can use the fact that characters are ordered, and for all lower case letters `ch` we have ′a′ ≤ ch and ch ≤ ′z′. Alternatively, you can use the fact that `['a'..'z']` evaluates to a list containing all lower case letters.
+
+### Exercise 3
+
+Write a function `mangle :: String -> String` which removes the first letter of a word and attaches it at the end. If the string is empty, `mangle` should simply return an empty string:
+
+```haskell
+mangle "Hello"   ⇒   "elloH"
+
+mangle "I"   ⇒   "I"
+
+mangle ""   ⇒   ""
+```
+
+### Exercise 4
+
+Implement division on `Int`, `divide :: Int -> Int -> Int` using the list functions described in this section. Hint: first, write a function that returns all the multiples of a given number up to a specific limit.
+
+```haskell
+divide 5 10   ⇒   2
+
+divide 5 8   ⇒   1
+
+divide 3 10   ⇒   3
+```
