@@ -240,3 +240,16 @@ data UnaryOp
   = NegOp
   | AbsOp
 ```
+
+### Exercise 2
+
+Given the binary tree definition
+
+```haskell
+data BinaryTree a
+  = Node a (BinaryTree a) (BinaryTree a)
+  | Leaf
+  deriving Show
+```
+
+define a function `isElementTree` that given a value and a binary tree checks whether that value is contained in the binary tree. What is `isElementTree`'s type?
