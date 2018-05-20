@@ -74,3 +74,72 @@ divide 5 8   ⇒   1
 
 divide 3 10   ⇒   3
 ```
+
+## Recursion
+
+### Exercise 1
+
+Another function that requires a reduction from the left is the function `stringToInt :: String -> Int`, which converts a string of digits into the corresponding `Int` value:
+
+``` haskell
+stringToInt "43212" ⇒ 43212
+```
+
+We can use the function `digitToInt :: Char -> Int` from module `Data.Char` to convert a single character.
+
+**Hint:** You want to compute 
+
+```haskell
+stringToInt "43212" ⇒ 10000 * 4 + 1000 * 3 + 100 * 2 + 10 * 1 + 1 * 2
+```
+
+How can you expose the recursive (left reduction) pattern in that computation?
+
+### Exercise 2 (Challenge)
+
+Recall
+
+```haskell
+reverse :: [a] -> [a]
+reverse []     = []
+reverse (x:xs) = reverse xs ++ [x]
+```
+
+This code is quite inefficient. The recursion for `reverse` visits each element of the input list once, and then, calls `(++)` once for each element, which is itself a recursive function that visits each element of its first argument. Overall, this implies that for a list of size *n*, our implementation of reverse performs in the order of *n^2* function calls. This is excessive. We would expect to be able to do it with about *n* function calls. Implement a function `fastReverse` that meets our efficiency expectation.
+
+### Exercise 3
+
+Given the following function definition
+
+```haskell
+sumOfSquareRoots xs = sum (allSquareRoots (filterPositives xs))
+  where
+    allSquareRoots []     = []
+    allSquareRoots (x:xs) = sqrt x : allSquareRoots xs
+
+    filterPositives [] 
+      = []
+    filterPositives (x:xs)
+      | x > 0     = x : filterPositives xs
+      | otherwise = filterPositives xs  
+```
+
+that uses recursion three times (in `sum`, in `allSquareRoots`, and in `filterPositives`), rewrite it into a single recursive traversal of its argument list. We call the process of going from multiple traversals to one *fusion* (or *deforestation*, as we get rid of tree structures).
+
+### Exercise 3
+
+Write a recursive function `countOdds` which calculates the number of odd elements in a list of `Int` values:
+
+```haskell
+countOdds [1, 6, 9, 14, 16, 22] = 2
+```
+
+**Hint:** You can use the Prelude function `odd :: Int -> Bool`, which tests whether a number is odd.
+
+### Exercise 4 (skip if it takes too long)
+
+Write a recursive function `removeOdd` that, given a list of integers, removes all odd numbers from the list, e.g.,
+
+```haskell
+removeOdd [1, 4, 5, 7, 10] = [4, 10]
+```
