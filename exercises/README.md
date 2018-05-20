@@ -143,3 +143,61 @@ Write a recursive function `removeOdd` that, given a list of integers, removes a
 ```haskell
 removeOdd [1, 4, 5, 7, 10] = [4, 10]
 ```
+
+## Higher-order functions
+
+### Exercise 1
+
+Given 
+
+```haskell
+allSquares :: Num a => [a] -> [a]
+allSquares []       = []
+allSquares (x : xs) = x * x : allSquares xs
+
+allToUpper :: String -> String
+allToUpper []                 = []
+allToUpper (chr : restString) = toUpper chr : allToUpper restString
+
+type Colour      = String
+type ColourPoint = (Int, Int, Colour)
+
+distance :: ColourPoint -> ColourPoint -> Float
+distance (x1, y1, colour1) (x2, y2, colour2) 
+  = sqrt (fromIntegral (dx * dx + dy * dy))
+  where
+    dx = x2 - x1
+    dy = y2 - y1
+    
+distancesFromPoint :: ColourPoint -> [ColourPoint] -> [Float]
+distancesFromPoint point []
+  = []
+distancesFromPoint point (p : ps)
+  = distance point p : distancesFromPoint point ps
+```
+
+rewrite the functions `allSquares`, `allToUpper`, and `distanceFromPoint` to use `map`. Can you implement `distanceFromPoint` without a `where` clause (or helper function)?
+
+### Exercise 2
+
+Given 
+
+```haskell
+import Data.Char
+
+extractDigits :: String -> String
+extractDigits []
+  = []
+extractDigits (chr : restString)
+  | isDigit chr = chr : extractDigits restString
+  | otherwise   =       extractDigits restString
+
+inRadius :: ColourPoint -> Float -> [ColourPoint] -> [ColourPoint]
+inRadius point radius []
+  = []
+inRadius point radius (p : ps)
+  | distance point p <= radius = p : inRadius point radius ps
+  | otherwise                  =     inRadius point radius ps
+```
+
+rewrite the functions `extractDigits` and `inRadius` to use `filter`.
