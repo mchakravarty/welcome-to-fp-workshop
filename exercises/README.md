@@ -151,6 +151,8 @@ removeOdd [1, 4, 5, 7, 10] = [4, 10]
 Given 
 
 ```haskell
+import Data.Char
+
 allSquares :: Num a => [a] -> [a]
 allSquares []       = []
 allSquares (x : xs) = x * x : allSquares xs
