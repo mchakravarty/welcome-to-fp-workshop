@@ -126,7 +126,7 @@ sumOfSquareRoots xs = sum (allSquareRoots (filterPositives xs))
 
 that uses recursion three times (in `sum`, in `allSquareRoots`, and in `filterPositives`), rewrite it into a single recursive traversal of its argument list. We call the process of going from multiple traversals to one *fusion* (or *deforestation*, as we get rid of tree structures).
 
-### Exercise 3
+### Exercise 4
 
 Write a recursive function `countOdds` which calculates the number of odd elements in a list of `Int` values:
 
@@ -136,7 +136,7 @@ countOdds [1, 6, 9, 14, 16, 22] = 2
 
 **Hint:** You can use the Prelude function `odd :: Int -> Bool`, which tests whether a number is odd.
 
-### Exercise 4 (skip if it takes too long)
+### Exercise 5 (skip if it takes too long)
 
 Write a recursive function `removeOdd` that, given a list of integers, removes all odd numbers from the list, e.g.,
 
