@@ -67,3 +67,56 @@ divide :: Int -> Int -> Int
 divide x y = length [x, 2*x..y]
 ```
 
+## Recursion
+
+### Exercise 1
+
+```
+import DataChar
+
+stringToInt :: String -> Int
+stringToInt str = stringToIntAcc 0 str
+  where
+    stringToIntAcc :: Int -> String -> Int
+    stringToIntAcc acc []
+       = acc
+    stringToIntAcc acc (chr : restString) 
+       = stringToIntAcc (10 * acc + digitToInt chr) restString
+```
+
+### Exercise 2
+
+```
+fastReverse :: [a] -> [a]
+fastReverse xs = reverseAcc [] xs
+  where
+    reverseAcc :: [a] -> [a] -> [a]
+    reverseAcc accList []     = accList
+    reverseAcc accList (x:xs) = reverseAcc (x : accList) xs
+ ```
+ 
+ ### Exercise 3
+ 
+```
+sumOfSquareRoots [] 
+  = 0
+sumOfSquareRoots (x:xs)
+  | x > 0     = sqrt x + sumOfSquareRoots xs
+  | otherwise = sumOfSquareRoots xs   
+```
+
+### Exercise 4
+
+```
+countOdds [] = 0
+countOdds (x:xs) | odd x     = 1 + countOdds xs
+                 | otherwise = countOdds xs
+```
+
+### Exercise 5
+
+```
+removeOdd [] = []
+removeOdd (x:xs) | odd x     = removeOdd xs
+                 | otherwise = x : removeOdd xs
+```
