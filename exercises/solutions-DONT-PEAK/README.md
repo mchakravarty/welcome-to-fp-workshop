@@ -160,3 +160,37 @@ inRadius point radius points = filter inRadiusP points
     inRadiusP :: ColourPoint -> Bool
     inRadiusP p = distance point p <= radius
 ```
+
+## Algebraic data types
+
+### Exercise 1
+
+```
+eval :: Expr -> Int
+eval (IntLit n) = n
+eval (BinaryApp op expr1 expr2)
+  = binOp op (eval expr1) (eval expr2)
+eval (UnaryApp op expr)
+  = unaryOp op (eval expr)
+
+binOp :: BinOp -> Int -> Int -> Int
+binOp MultOp = (*)
+binOp AddOp  = (+)
+binOp DivOp  = div
+binOp SubOp  = (-)
+
+unaryOp :: UnaryOp -> Int -> Int
+unaryOp NegOp = negate
+unaryOp AbsOp = abs
+```
+
+### Exercise 2
+
+```
+isElementTree :: Ord a => a -> BinaryTree a -> Bool
+isElementTree x Leaf = False
+isElementTree value (Node nodeValue leftSubtree rightSubtree)
+  | value == nodeValue  = True     
+  | value  <  nodeValue = isElementTree value leftSubtree 
+  | otherwise           = isElementTree value rightSubtree
+```
