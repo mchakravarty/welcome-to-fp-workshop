@@ -120,3 +120,43 @@ removeOdd [] = []
 removeOdd (x:xs) | odd x     = removeOdd xs
                  | otherwise = x : removeOdd xs
 ```
+
+## Higher-order functions
+
+### Exercise 1
+
+```
+import Data.Char
+
+allSquares :: Num a => [a] -> [a]
+allSquares xs = map square xs
+  where
+    square x = x * x
+
+allToUpper :: String -> String
+allToUpper string = map toUpper string
+
+type Colour      = String
+type ColourPoint = (Int, Int, Colour)
+
+distancesFromPoint :: ColourPoint -> [ColourPoint] -> [Float]
+distancesFromPoint point points = map distanceP points
+  where
+    distanceP :: ColourPoint -> Float
+    distanceP p = distance point p
+```
+
+### Exercise 2
+
+```
+import Data.Char
+
+extractDigits :: String -> String
+extractDigits strings = filter isDigit strings
+
+inRadius :: ColourPoint -> Float -> [ColourPoint] -> [ColourPoint]
+inRadius point radius points = filter inRadiusP points
+  where
+    inRadiusP :: ColourPoint -> Bool
+    inRadiusP p = distance point p <= radius
+```
