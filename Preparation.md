@@ -4,34 +4,17 @@ Please bring your laptop with the following software pre-installed to the worksh
 
 ## macOS
 
-If you are on macOS High Sierra (10.13) or Sierra (10.12), please [download Haskell for Mac](http://download.haskellformac.com/) and activate the 14 day trial. Haskell for Mac is an IDE that makes it easy to get started with Haskell. You will receive a full license key at the workshop.
+If you are on macOS Mojave (10.14) or High Sierra (10.13), please [download Haskell for Mac](http://download.haskellformac.com/) and activate the 14 day trial. Haskell for Mac is an IDE that makes it easy to get started with Haskell. You will receive a full license key at the workshop.
 
-If you are on a version of macOS older than 10.12, please [install the Haskell Platform (8.0.2)](https://www.haskell.org/platform/download/8.0.2/Haskell%20Platform%208.0.2%20Full%2064bit-signed.pkg) package. This provides you with a command line compiler.
+If you are on a version of macOS older than 10.13, please [install the Haskell Platform (8.6.3)](https://haskell.org/platform/download/8.6.3/Haskell%20Platform%208.6.3%20Core%2064bit-signed.pkg) package. This provides you with a command line compiler.
 
 ## Windows
 
-Please [install the Haskell Platform (8.0.2)](https://www.haskell.org/platform/download/8.0.2/HaskellPlatform-8.0.2-a-full-x86_64-setup.exe). (There is also a [32bit version](https://www.haskell.org/platform/download/8.0.2/HaskellPlatform-8.0.2-a-full-i386-setup.exe).)
+Please [install the Haskell Platform (8.6.3)](https://haskell.org/platform/download/8.6.3/HaskellPlatform-8.6.3-core-x86_64-setup.exe). (There is also a [32bit version](https://haskell.org/platform/download/8.6.3/HaskellPlatform-8.6.3-core-i386-setup.exe).) Also, please take not of these [additional instructions](https://www.haskell.org/platform/#windows).
 
 ## Linux
 
-Please [download the Haskell Platform (8.0.2)](https://www.haskell.org/platform/download/8.0.2/haskell-platform-8.0.2-unknown-posix--full-x86_64.tar.gz). (There is also a [32bit version](https://www.haskell.org/platform/download/8.0.2/haskell-platform-8.0.2-unknown-posix--full-i386.tar.gz).)
-
-Install by running:
-
-```
-$ tar xf ...downloaded archive...
-$ sudo ./install-haskell-platform.sh
-```
-
-If you have a system with position independent executables by default (such as Ubuntu 16.10 and above), you should edit the GHC settings file at
-
-```
-usr/local/haskell/ghc-8.0.2/lib/ghc-8.0.2/settings
-```
-
-and change the "compiler supports -no-pie" flag from "NO" to "YES". (This is relative to your installation location.)
-
-**Alternatively,** you can use your distribution's package manger to install version 8.0.2 of the `haskell-platform` package.
+On Linux, please use the package manager of your Linux distribution as described on the [Haskell Platform page](https://www.haskell.org/platform/#linux). Please install the version including version 8.6.4 or 8.6.3 of GHC (Glasgow Haskell Compiler).
 
 ## Editor support (optional)
 
