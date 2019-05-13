@@ -6,6 +6,8 @@ Please bring your laptop with the following software pre-installed to the worksh
 
 If you are on macOS Mojave (10.14) or High Sierra (10.13), please [download Haskell for Mac](http://download.haskellformac.com/) and activate the 14 day trial. Haskell for Mac is an IDE that makes it easy to get started with Haskell. You will receive a full license key at the workshop.
 
+For High Sierra, please use the [old version of Haskell for Mac](https://dl.devmate.com/com.haskellformac.Haskell.basic/1482/1545510880/Haskell—FunctionalProgrammingLab-1482.dmg) for now.
+
 If you are on a version of macOS older than 10.13, please [install the Haskell Platform (8.6.3)](https://haskell.org/platform/download/8.6.3/Haskell%20Platform%208.6.3%20Core%2064bit-signed.pkg) package. This provides you with a command line compiler.
 
 ## Windows
